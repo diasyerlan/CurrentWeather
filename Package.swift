@@ -5,11 +5,16 @@ import PackageDescription
 
 let package = Package(
     name: "CurrentWeather",
+    platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "CurrentWeather",
             targets: ["CurrentWeather"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.0"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
