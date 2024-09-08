@@ -10,7 +10,7 @@ import CoreLocation
 import Alamofire
 import SnapKit
 
-class WeatherViewController: UIViewController, CLLocationManagerDelegate {
+public class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let apiKey = "ab3b3fccf2b75183232a8fed1bb320e3"
