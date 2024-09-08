@@ -17,7 +17,7 @@ public class WeatherViewController: UIViewController, CLLocationManagerDelegate 
     
     let weatherView = WeatherView()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
@@ -51,7 +51,7 @@ public class WeatherViewController: UIViewController, CLLocationManagerDelegate 
         locationManager.startUpdatingLocation()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             startLoading()
             fetchWeatherData(for: location.coordinate)
@@ -105,7 +105,7 @@ public class WeatherViewController: UIViewController, CLLocationManagerDelegate 
         activityIndicator.stopAnimating()
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("ERROR: Failed to get user location - \(error.localizedDescription)")
     }
 }
